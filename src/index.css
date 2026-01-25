@@ -1,4 +1,4 @@
-.App {
+/* .App {
   font-family: sans-serif;
   text-align: center;
 }
@@ -27,9 +27,56 @@ span {
 /* padding-bottom: 2rem;
 } */
 
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+} */
+
+/* new code */
+
+.movie-card {
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.movie-name {
+  font-weight: 700;
+  font-family: "inter";
+  color: #010101;
+}
+
+.movie-summary {
+  font-family: "inter";
+  font-weight: 400;
+  color: #796f70;
+  padding: 10px;
+}
+
+.movie-rating {
+  font-weight: 700;
+  font-family: "inter";
+}
+.name-rating {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  padding: 10px;
 }
