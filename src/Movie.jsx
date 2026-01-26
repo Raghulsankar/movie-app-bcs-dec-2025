@@ -14,10 +14,10 @@ export function Movie({ name, poster, rating, summary }) {
   return (
     <div className="movie-card">
       <img src={poster} alt={name} />
-      <div className="name-rating">
+      {/* <div className="name-rating"> */}
         <p className="movie-name">{name}</p>
         <p className="movie-rating">⭐ {rating}</p>
-      </div>
+      {/* </div> */}
       <p className="movie-summary">{summary}</p>
     </div>
   );
