@@ -1,6 +1,10 @@
-/* .App {
+.App {
   font-family: sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .user-msg {
@@ -17,22 +21,32 @@ span {
   font-weight: bold;
   font-style: italic;
 }
-/* .box { */
-/* height: 12rem; */
-/* border: 2px solid ; */
-/* display: flex;
-  flex-direction: column;
-  align-items: center; */
-/* gap: 3rem; */
-/* padding-bottom: 2rem;
-} */
-
-/* .App {
+.box {
+  height: 12rem;
+  /* border: 2px solid ; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-} */
+  gap: 3rem;
+  /* padding-bottom: 2rem; */
+}
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  button {
+    border-radius: 10rem;
+    height: 2rem;
+    background-color: crimson;
+  }
+}
+.counter-like-dislike {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 /* new code */
 /* 
@@ -82,7 +96,7 @@ span {
 } */
 
 /* with responive style code */
-.App {
+/* .App {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -113,15 +127,15 @@ span {
 }
 
 /* Grid layout */
-.App {
+/* .App {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 50px;
   padding: 20px;
-}
+} */
 
 /* Text styles */
-.movie-name {
+/* .movie-name {
   font-weight: 700;
   font-family: "Inter", sans-serif;
   color: #010101;
@@ -141,10 +155,10 @@ span {
   color: #796f70;
   font-size: 14px;
   line-height: 1.4;
-}
+} */
 
 /* 📱 Mobile optimization */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .movie-card img {
     height: 260px;
   }
@@ -152,11 +166,11 @@ span {
   .movie-summary {
     font-size: 13px;
   }
-}
+} */
 
 /* 📱 Tablet */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .movie-card img {
     height: 300px;
   }
-}
+}  */

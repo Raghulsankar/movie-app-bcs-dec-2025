@@ -1,95 +1,24 @@
 import "./index.css";
-// import { User } from "./User";
-import { Movie } from "./Movie";
+import { User } from "./User";
+import { useState } from "react";
 
 // Component = UI + Logic
 // Props - Arg & Parameter - Properties
 export default function App() {
   // Logic Starts
-  const movieList = [
+  const userDetails = [
     {
-      name: "Border 2",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00401449-yvzgkbpdca-portrait.jpg",
-      rating: 7.5,
-      summary:
-        "A massive war drama sequel set during the 1971 Indo-Pak war. Sunny Deol returns as Major Kuldip Singh Chandpuri to lead a new battalion in a high-stakes battle for sovereignty, featuring intense tank warfare and patriotic sacrifice.",
+      name: "Arjun",
+      url: "https://tse1.mm.bing.net/th/id/OIP.t1-t9FzCErAaW4X93_nIUgHaHa?pid=Api&P=0&h=180",
     },
     {
-      name: "Thalaivar Thambi Thalaimaiyil",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00481251-htxqsrdcwb-portrait.jpg",
-      rating: 8.8,
-      summary:
-        "A chaotic comedy-drama starring Jiiva as a Panchayat President who gets trapped in a dilemma when a death occurs in one house and a wedding in the neighbor's house simultaneously, forcing him to manage the mayhem.",
+      name: "Surya",
+      url: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg",
     },
     {
-      name: "Dhurandhar",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00452447-smmrnuhqrx-portrait.jpg",
-      rating: 7.0,
-      summary:
-        "An espionage thriller featuring Ranveer Singh as Hamza, an undercover Indian intelligence agent who embeds himself deep within the Karachi mafia to dismantle terror operations from the inside.",
+      name: "Rishi",
+      url: "https://tse1.mm.bing.net/th/id/OIP.V-iUPXL7-oSOAvR2dtdWiQHaHa?pid=Api&P=0&h=180",
     },
-    {
-      name: "Hot Spot 2 Much",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00482307-akyreartuz-portrait.jpg",
-      rating: 7.2,
-      summary:
-        "A bold anthology sequel that satirizes modern morality. The film weaves together stories about relationships, hypocrisy, and social stigmas, centered around a filmmaker pitching controversial scripts to a producer.",
-    },
-    {
-      name: "Ikkis",
-      poster:
-        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/ikkis-et00388415-1765283297.jpg",
-      rating: 8.7,
-      summary:
-        "A biographical war drama directed by Sriram Raghavan, telling the untold story of Second Lieutenant Arun Khetarpal, the youngest recipient of the Param Vir Chakra, who fought bravely in the 1971 war.",
-    },
-    {
-      name: "Draupathi 2",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00481466-fkumcpefau-portrait.jpg",
-      rating: 6.5,
-      summary:
-        "A social drama that shifts between the modern day and the 14th century. It follows a man entangled in a land dispute who discovers a historical connection to a Hoysala commander protecting his kingdom from invaders.",
-    },
-    {
-      name: "Rahu Ketu",
-      poster:
-        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/rahu-ketu-et00462933-1768457264.jpg",
-      rating: 8.0,
-      summary:
-        "A fantasy comedy where two unlucky characters from a writer's story, Rahu and Ketu (played by Varun Sharma and Pulkit Samrat), magically come to life and create cosmic chaos in the real world.",
-    },
-    {
-      name: "Parasakthi",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00431398-kmxrrdfpbu-portrait.jpg",
-      rating: 5.0,
-      summary:
-        "Set in the 1960s, this period drama starring Sivakarthikeyan focuses on the anti-Hindi imposition agitation in Tamil Nadu, following two brothers on opposite sides of the law during a turbulent political movement.",
-    },
-    {
-      name: "Happy Patel: Khatarnak Jasoos",
-      poster:
-        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/happy-patel-khatarnak-jasoos-et00473816-1766394630.jpg",
-      rating: 6.0,
-      summary:
-        "A spy-comedy featuring Vir Das as Happy Patel, a ballet-dancing, sandwich-making misfit who is unexpectedly tasked with rescuing a scientist and saving the world from a deadly fairness cream conspiracy.",
-    },
-    {
-      name: "Jockey",
-      poster:
-        "https://assets-in.bmscdn.com/discovery-catalog/events/et00464571-brzspuhzaq-portrait.jpg",
-      rating: 7.8,
-      summary:
-        "An intense sports drama that dives into the high-stakes world of horse racing. The film explores the physical and emotional challenges faced by a professional jockey fighting for pride and survival in the sport.",
-    },
-    // {
-    //   poster: "../sample-images/image.png",
-    // },
   ];
 
   // Logic Ends
@@ -108,8 +37,13 @@ export default function App() {
 
       {/* solution 2 */}
 
-      {movieList.map(({ name, poster, rating, summary }) => (
-        <Movie name={name} poster={poster} summary={summary} rating={rating} />
+      {userDetails.map(({ name, url }) => (
+        // <> this is an react fragment
+        <>
+          <User name={name} url={url} />
+          <Counter />
+          <Color />
+        </>
       ))}
 
       {/* <User
@@ -199,3 +133,71 @@ export default function App() {
 // // JSX - JavaScript XML
 // // Babel -> JSX -> JS
 // // class -> reserverd keyword
+
+function Counter() {
+  const [like, setLike] = useState(0);
+  const [dislike, setDisLike] = useState(0);
+  return (
+    <div className="counter-container">
+      {/* Event Listener - click event - camelCase */}
+
+      <button
+        onClick={() => {
+          // like++;
+          // console.log(like);
+          // setLike(1000);
+          setLike(like + 1);
+        }}
+      >
+        👍 {like}
+      </button>
+      <button
+        onClick={() => {
+          setDisLike(dislike + 1);
+        }}
+      >
+        👎 {dislike}
+      </button>
+      {/* <h1>{like}</h1>
+      <h1>{dislike}</h1> */}
+
+      {/* progress = like/like+dislike*100 */}
+      <div className="counter-like-dislike">
+        <label for="progress-bar">Uploading Document</label>
+        <progress
+          id="progress-bar"
+          value={like}
+          max={like + dislike}
+        ></progress>
+      </div>
+      {/* Ternaroy operator */}
+      {/* <p>{like - dislike >= 10 ? "you are awesome🚀" : "your are fun😜"}</p> */}
+      <p>
+        {like === 0 && dislike === 0
+          ? ""
+          : like - dislike > 10
+            ? "You are awesome 🚀"
+            : "You are fun 😜"}
+      </p>
+    </div>
+  );
+}
+
+// function Color() {
+//   const [color, setColor] = useState("");
+//   return <input type="text" />;
+// }
+
+function Color() {
+  const [color, setColor] = useState("");
+
+  return (
+    <div style={{ backgroundColor: color, height: "100vh", padding: "20px" }}>
+      <input
+        type="text"
+        placeholder="Type a color (red, blue, green...)"
+        onChange={(e) => setColor(e.target.value)}
+      />
+    </div>
+  );
+}
