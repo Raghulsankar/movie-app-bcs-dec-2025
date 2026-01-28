@@ -184,7 +184,7 @@ function Counter() {
 }
 
 // function Color() {
-//   const [color, setColor] = useState("");
+//   const [color, setColor] = useState(0);
 //   return <input type="text" />;
 // }
 
