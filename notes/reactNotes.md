@@ -2,7 +2,7 @@
 
 # React Hooks
 
-Hook - variable - React tracs
+Hook - variable - React tracks
 
 > normal variabloe doesn't trackk
 
@@ -27,18 +27,57 @@ Hook - variable - React tracs
 
 > state refers to current value or current DATA
 
-
-
 # React form elements
 
-refer mdn 
-
-
+refer mdn
 
 # react fragment
 
 - we can return function in a react return only one parent. otherwise use react fragment.
 
-# conditional rendering 
+# conditional rendering
 
-- while using ternary operator using react is called conditional rendering
+- while using ternary operator using interpolutaion inside in react is called conditional
+- less performance
+- must use conditional rendering
+
+# condiional styling
+
+- while using conditional styling only in the dom when will you use
+- more performance
+
+# react typing events
+
+[javascript events mdn](https://developer.mozilla.org/en-US/docs/Web/API/Element/lostpointercapture_event)
+
+# onChange()
+
+# study and refer
+
+1. what is event deligation ?
+2. what is event bubbling ?
+3. what is event propagation ?
+
+# React Router
+
+# Routing
+
+> why Routing?
+
+different different componenets difffernt pages move
+
+# Advantages of routing (when we have routing)
+
+- easy to access
+- loading is high
+- organised
+- sharing url
+- secure route
+
+# disadvantages
+
+[React router website](https://reactrouter.com/start/declarative/installation)
+
+- npm i react-router
+- import { BrowserRouter } from "react-router";
+- <BrowserRouter></BrowserRouter> insise main.jsx file
