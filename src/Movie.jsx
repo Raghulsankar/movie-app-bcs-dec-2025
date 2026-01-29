@@ -9,16 +9,24 @@
 //       <p>{summary}</p>
 //     </div>
 //   );
+
+import { useState } from "react";
+import { Counter } from "./App4";
+
 // }
 export function Movie({ name, poster, rating, summary }) {
+  const [show, setShow] = useState(true);
+
   return (
     <div className="movie-card">
       <img src={poster} alt={name} />
       {/* <div className="name-rating"> */}
-        <p className="movie-name">{name}</p>
-        <p className="movie-rating">⭐ {rating}</p>
+      <p className="movie-name">{name}</p>
+      <p className="movie-rating">⭐ {rating}</p>
       {/* </div> */}
-      <p className="movie-summary">{summary}</p>
+      <button onClick={() => setShow(!show)}>Toggle summary</button>
+      {show ? <p className="movie-summary">{summary}</p> : null}
+      <Counter needProgress={false} />
     </div>
   );
 }
