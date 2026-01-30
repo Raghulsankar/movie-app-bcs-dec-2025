@@ -89,41 +89,45 @@ different different componenets difffernt pages move
 # types of router
 
 # hash router
+
 # browser router
 
 > hash router supports all browser including old browser like IE
 
 > browser router not support IE router lie old browser only support new browser
 
-
 # useNavigate
 
 +1 => one page forward
 -1 => one page bacward
 
-
 # home
->  / represents the home page
 
+> / represents the home page
 
 # 404 page error
 
->  **  matches any string
+> \*\* matches any string
 
 - not found in the last one of the route
 
-
-
-# redirect 
+# redirect
 
 rfer mdn
 
 > path=":id /"
 > ":" will be assigned as a variable
 
-
 # useParams
 
 - always params returns a object
 
+# useEffect
 
+new hook
+
+- study useEffects learn what is it? why to use? how to apply these hooks?
+
+> excersise
+
+> delete movie using movie list using mockapi
