@@ -1,13 +1,11 @@
-import "./index.css";
-
 import { useState } from "react";
+import { ColorBox } from "./ColorBox";
 
-function ColorGame() {
+export function ColorGame() {
   // state to store input value
   const [color, setColor] = useState("green");
   const [colorList, setColorList] = useState(["crimson", "pink", "orange"]);
   // const [click, setClick] = useState(colorList);
-
   const styles = {
     backgroundColor: color,
   };
@@ -29,8 +27,8 @@ function ColorGame() {
       {/* Echo on screen */}
       <h2>{color}</h2>
       {/* <ColorBox />
-      <ColorBox />
-      <ColorBox /> */}
+            <ColorBox />
+            <ColorBox /> */}
 
       {/* colorList is an array of string so we use map  */}
 
@@ -39,16 +37,4 @@ function ColorGame() {
       ))}
     </div>
   );
-}
-
-export default ColorGame;
-
-function ColorBox({ clr }) {
-  const styles = {
-    height: "1.5rem",
-    width: "12rem",
-    marginTop: "1rem",
-    backgroundColor: clr,
-  };
-  return <div style={styles}></div>;
 }
