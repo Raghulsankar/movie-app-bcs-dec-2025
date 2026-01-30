@@ -81,3 +81,49 @@ different different componenets difffernt pages move
 - npm i react-router
 - import { BrowserRouter } from "react-router";
 - <BrowserRouter></BrowserRouter> insise main.jsx file
+
+# graph history check using vscode
+
+- git checkout main
+
+# types of router
+
+# hash router
+# browser router
+
+> hash router supports all browser including old browser like IE
+
+> browser router not support IE router lie old browser only support new browser
+
+
+# useNavigate
+
++1 => one page forward
+-1 => one page bacward
+
+
+# home
+>  / represents the home page
+
+
+# 404 page error
+
+>  **  matches any string
+
+- not found in the last one of the route
+
+
+
+# redirect 
+
+rfer mdn
+
+> path=":id /"
+> ":" will be assigned as a variable
+
+
+# useParams
+
+- always params returns a object
+
+

@@ -11,7 +11,7 @@
 //   );
 
 import { useState } from "react";
-import { Counter } from "./App4";
+import { Counter } from "./Counter";
 
 // }
 export function Movie({ name, poster, rating, summary }) {

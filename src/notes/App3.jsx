@@ -1,27 +1,13 @@
 import { useState } from "react";
 import "./index.css";
-// import { MovieList } from "./MovieList";
 
-// import { Msg } from "./Msg";
-// import { UserList } from "./UserList";
-
-// Component = UI + Logic
-// Props - Arg & Parameter - Properties
 export default function App() {
-  // Logic Starts
-  const names = ["Vikas", "Dhanpal", "Rahul", "Rishi", "Robin"];
+  // const names = ["Vikas", "Dhanpal", "Rahul", "Rishi", "Robin"];
 
-  // Logic Ends
   return (
-    // UI Starts
     <div className="App">
-      {/* <UserList /> */}
-
-      {/* <MovieList /> */}
-
       <Counter />
     </div>
-    // UI Ends
   );
 }
 

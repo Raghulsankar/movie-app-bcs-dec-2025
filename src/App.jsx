@@ -1,55 +1,107 @@
-import "./index.css";
-
 import { useState } from "react";
+import "./index.css";
+import { Movie } from "./Movie";
+import { Userlist } from "./Userlist";
+import { Route, Routes, Link } from "react-router";
+// import { ColorGame } from "./App6";
+import { User } from "./User";
 
-function ColorGame() {
-  // state to store input value
-  const [color, setColor] = useState("green");
-  const [colorList, setColorList] = useState(["crimson", "pink", "orange"]);
-  // const [click, setClick] = useState(colorList);
-
-  const styles = {
-    backgroundColor: color,
-  };
-
+export default function App() {
   return (
     <div>
-      {/* Input */}
-      <input
-        type="text"
-        placeholder="Favorite color"
-        value={color}
-        onChange={(event) => setColor(event.target.value)}
-        style={styles}
-      />
-      <button onClick={() => setColorList([...colorList, color])}>
-        Add Color
-      </button>
 
-      {/* Echo on screen */}
-      <h2>{color}</h2>
-      {/* <ColorBox />
-      <ColorBox />
-      <ColorBox /> */}
-
-      {/* colorList is an array of string so we use map  */}
-
-      {colorList.map((clr) => (
-        <ColorBox clr={clr} />
-      ))}
+      <Routes>
+        <Route path="/movies" element={<MovieList />} />
+      </Routes>
+      {/* <MovieList /> */}
     </div>
   );
 }
 
-export default ColorGame;
+function MovieList() {
+  const [movieList, setMovieList] = useState([
+    {
+      name: "Border 2",
+      poster:
+        "https://assets-in.bmscdn.com/discovery-catalog/events/et00401449-yvzgkbpdca-portrait.jpg",
+      rating: 7.5,
+      summary: "A massive war drama sequel set during the 1971 Indo-Pak war.",
+    },
+  ]);
 
-function ColorBox({ clr }) {
-  const styles = {
-    height: "1.5rem",
-    width: "12rem",
-    marginTop: "1rem",
-    backgroundColor: clr,
+  const [name, setName] = useState("");
+  const [poster, setPoster] = useState("");
+  const [rating, setRating] = useState("");
+  const [summary, setSummary] = useState("");
+
+  const addMovie = () => {
+    const newMovie = {
+      name,
+      poster,
+      rating: Number(rating),
+      summary,
+    };
+
+    setMovieList([newMovie, ...movieList]);
+
+    setName("");
+    setPoster("");
+    setRating("");
+    setSummary("");
   };
-  return <div style={styles}></div>;
-}
 
+  return (
+    <div className="App">
+      {/* <nav>
+        <Link to="/colorgame">ColorGame</Link> | <Link to="/movie">Movie</Link>{" "}
+        |<Link to="/userlist">Userlist</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/colorgame" element={<ColorGame />} />
+        <Route path="/movie" element={<movieList />} />
+        <Route path="Userlist" element={<Userlist />} />
+      </Routes> */}
+
+      {/* 🔹 ADD MOVIE FORM */}
+      <div className="add-movie-form">
+        <input
+          placeholder="Movie Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          placeholder="Poster URL"
+          value={poster}
+          onChange={(e) => setPoster(e.target.value)}
+        />
+
+        <input
+          placeholder="Rating"
+          type="number"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+        />
+
+        <input
+          placeholder="Summary"
+          value={summary}
+          onChange={(e) => setSummary(e.target.value)}
+        />
+
+        <button onClick={addMovie}>➕ Add Movie</button>
+      </div>
+
+      {movieList.map(({ name, poster, rating, summary }, index) => (
+        <Movie
+          key={index}
+          name={name}
+          poster={poster}
+          rating={rating}
+          summary={summary}
+        />
+      ))}
+    </div>
+  );
+}
