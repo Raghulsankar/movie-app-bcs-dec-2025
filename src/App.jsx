@@ -1,11 +1,13 @@
 import "./index.css";
 import { Userlist } from "./Userlist";
-import { Route, Routes, Link, useParams } from "react-router";
+import { Route, Routes, Link, useParams, Navigate } from "react-router";
 // import { ColorGame } from "./App6";
 import { User } from "./User";
 import ColorGame, { ColorBox } from "./ColorBox";
 import { MovieList } from "./MovieList";
 import { useState } from "react";
+import { Home } from "./Home";
+import { Error } from "./Error";
 
 export default function App() {
   const [movieList, setMovieList] = useState([
@@ -90,10 +92,12 @@ export default function App() {
         "An intense sports drama that dives into the high-stakes world of horse racing. The film explores the physical and emotional challenges faced by a professional jockey fighting for pride and survival in the sport.",
     },
   ]);
-  
+
   return (
     <div>
       <Routes>
+        {/* Old users -> films */}
+        <Route path="films" element={<Navigate replace to="/movies" />} />
         <Route
           path="/movies"
           element={
@@ -106,7 +110,11 @@ export default function App() {
           path="movies/:id"
           element={<MovieDetails movieList={movieList} />}
         />
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
       </Routes>
+      {/* <Route path="/" element={<Userlist />} /> */}
+
       {/* <MovieList /> */}
     </div>
   );
@@ -123,4 +131,3 @@ function MovieDetails({ movieList }) {
     </>
   );
 }
-
