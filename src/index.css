@@ -1,4 +1,4 @@
-/* .App {
+ .App {
   font-family: sans-serif;
   text-align: center;
   display: flex;
@@ -7,9 +7,9 @@
   gap: 2rem;
 }
 
-.user-msg {
+/* .user-msg {
   color: orange;
-}
+} */
 .img {
   height: 100px;
   width: 100px;
@@ -24,12 +24,13 @@ span {
 .box {
   height: 12rem;
   /* border: 2px solid ; */
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem; */
-  /* padding-bottom: 2rem; */
-/* } */
+  gap: 3rem; 
+  padding-bottom: 2rem;
+ } 
+
 .counter-container {
   display: flex;
   flex-direction: column;
@@ -46,7 +47,7 @@ span {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-} 
+}
 
 /* new code */
 
@@ -65,7 +66,7 @@ span {
   border-radius: 18px;
 }
 
-/* .App {
+ .App {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -96,7 +97,7 @@ span {
 } 
 
 /* with responive style code */
- .App {
+.App {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -127,12 +128,13 @@ span {
 }
 
 /* Grid layout */
- .App {
+.App {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 50px;
   padding: 20px;
-} */
+}
+*/
 
 /* Text styles */
  .movie-name {
@@ -173,4 +175,10 @@ span {
   .movie-card img {
     height: 300px;
   }
-} 
+}
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}

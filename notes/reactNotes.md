@@ -107,13 +107,13 @@ different different componenets difffernt pages move
 
 # 404 page error
 
-> \*\* matches any string
+> ** matches any string
 
 - not found in the last one of the route
 
 # redirect
 
-rfer mdn
+refer mdn
 
 > path=":id /"
 > ":" will be assigned as a variable
@@ -131,3 +131,4 @@ new hook
 > excersise
 
 > delete movie using movie list using mockapi
+

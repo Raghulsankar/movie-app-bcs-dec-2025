@@ -43,3 +43,4 @@ export function Counter({ needProgress }) {
     </div>
   );
 }
+

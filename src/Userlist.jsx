@@ -1,3 +1,5 @@
+import { ColorGame } from "./ColorGame";
+import { Counter } from "./Counter";
 import "./index.css";
 import { User } from "./User";
 
@@ -20,7 +22,10 @@ export function Userlist() {
   return (
     <div className="App">
       {userDetails.map(({ name, url }) => (
-        <User name={name} url={url} />
+        <>
+          <User name={name} url={url} />
+          <Counter />
+        </>
       ))}
     </div>
   );

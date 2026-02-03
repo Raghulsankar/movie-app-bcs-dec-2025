@@ -94,6 +94,7 @@ export function MovieList({ movieList, setMovieList }) {
 
   const addMovie = () => {
     const newMovie = {
+      id: Date.now().toString(), // ✅ unique id
       name,
       poster,
       rating,
@@ -106,6 +107,10 @@ export function MovieList({ movieList, setMovieList }) {
     setPoster("");
     setRating("");
     setSummary("");
+  };
+
+  const deleteMovie = (id) => {
+    setMovieList((prev) => prev.filter((movie) => movie.id !== id));
   };
 
   return (
@@ -148,13 +153,25 @@ export function MovieList({ movieList, setMovieList }) {
         {/* <button >➕ Add Movie</button> */}
       </div>
 
-      {movieList.map(({ name, poster, rating, summary }, index) => (
+      {/* {movieList.map(({ name, poster, rating, summary }, index) => (
         <Movie
           key={index}
           name={name}
           poster={poster}
           rating={rating}
           summary={summary}
+        />
+      ))} */}
+
+      {movieList.map(({ id, name, poster, rating, summary }) => (
+        <Movie
+          key={id}
+          id={id}
+          name={name}
+          poster={poster}
+          rating={rating}
+          summary={summary}
+          onDelete={deleteMovie}
         />
       ))}
     </div>
