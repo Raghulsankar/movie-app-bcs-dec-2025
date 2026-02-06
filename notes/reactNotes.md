@@ -107,7 +107,7 @@ different different componenets difffernt pages move
 
 # 404 page error
 
-> ** matches any string
+> \*\* matches any string
 
 - not found in the last one of the route
 
@@ -131,4 +131,50 @@ new hook
 > excersise
 
 > delete movie using movie list using mockapi
+
+# Types of components
+
+1. class components => using BCS Company so just learn basics with your own understanding not manadatory
+2. function components
+
+> we are using only function componenet because class components using before 9 years ago
+
+# Life cycle of component
+
+1. initialization -> Birth of the component
+2. Mounting -> it is sitting on the DOM(jsx file convert to js and mount in the DOM)
+3. Updating -> if either states and props changes the updation will be activated
+4. Unmounting -> Remove from DOM is called "Unmounting"
+
+# which time mounting happens?
+
+> conditional rendering time the mounting and unmounting will be on the screen
+> Routing has happend the mounting and unmounting happens
+
+# life cycle methods - Class Componenets
+
+1. ComonenetWillMount - Before Mounting => example : console.log()
+2. ComponenetDidMount = After mounting => eg: API
+3. ComponenetWillUnMount - Before UnMounting => eg: cleanup - clearInterval()
+
+# Below methods will wor when the state Updates
+
+4. ComponentWillUpdate - Before re-rendering => eg: console.log(old,new)
+5. ComponentDidUpdate - After re-rendering => eg: Box - Calculate new height & new width
+6. ComponenetRecivedProps - 
+
+> ComponentDidMount - setInterval - when destroy? when componenet get s destroyed - conditional rendering / Routing
+> ComponentUnMount - clearInterval()
+
+
+# Function componenets 6 in 1
+
+these above six lifecycle componenets into 1 hook that is is useEffect() Hook
+
+
+# useNavigate()
+
+1. navigate("/about")
+2. navigate(-1) -> bac button
+3. navigate(1) => next 
 
